@@ -17,3 +17,10 @@ export interface Category {
   color: string;
   sections: QuestionSection[];
 }
+
+export interface Track {
+  id: string;
+  name: string;
+  description: string;
+  categories: Category[];
+}

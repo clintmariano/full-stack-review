@@ -126,6 +126,55 @@ export function CategoryIcon({ icon, color, size = 48 }: CategoryIconProps) {
         <line x1="24" y1="16" x2="24" y2="32" stroke={color} strokeWidth="2" />
       </svg>
     ),
+    architecture: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <path d="M24 6L6 18v24h36V18L24 6z" stroke={color} strokeWidth="2" fill="none" />
+        <line x1="24" y1="6" x2="24" y2="42" stroke={color} strokeWidth="2" />
+        <line x1="6" y1="18" x2="42" y2="18" stroke={color} strokeWidth="2" />
+        <rect x="18" y="28" width="12" height="14" stroke={color} strokeWidth="2" fill="none" />
+      </svg>
+    ),
+    scalability: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <path d="M8 40L18 28L26 34L40 12" stroke={color} strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+        <polyline points="32,12 40,12 40,20" stroke={color} strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    security: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <path d="M24 4L8 12v12c0 11 7 20 16 22 9-2 16-11 16-22V12L24 4z" stroke={color} strokeWidth="2" fill="none" />
+        <path d="M18 24l4 4 8-8" stroke={color} strokeWidth="2.5" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    cloud: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <path d="M14 36h22a8 8 0 001-15.9A10 10 0 0017 18a10 10 0 00-9 6 8 8 0 006 12z" stroke={color} strokeWidth="2" fill="none" />
+      </svg>
+    ),
+    observability: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <circle cx="22" cy="22" r="14" stroke={color} strokeWidth="2" fill="none" />
+        <line x1="32" y1="32" x2="42" y2="42" stroke={color} strokeWidth="3" strokeLinecap="round" />
+        <path d="M14 22h4l3-6 4 12 3-6h4" stroke={color} strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" />
+      </svg>
+    ),
+    devops: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <path d="M24 8a16 16 0 010 32" stroke={color} strokeWidth="2" fill="none" />
+        <path d="M24 40a16 16 0 010-32" stroke={color} strokeWidth="2" fill="none" strokeDasharray="4 4" />
+        <polygon points="28,8 24,2 20,8" fill={color} />
+        <polygon points="20,40 24,46 28,40" fill={color} />
+        <circle cx="24" cy="24" r="4" stroke={color} strokeWidth="2" fill="none" />
+      </svg>
+    ),
+    casestudies: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <rect x="8" y="6" width="32" height="36" rx="3" stroke={color} strokeWidth="2" fill="none" />
+        <line x1="14" y1="16" x2="34" y2="16" stroke={color} strokeWidth="2" />
+        <line x1="14" y1="24" x2="34" y2="24" stroke={color} strokeWidth="2" />
+        <line x1="14" y1="32" x2="26" y2="32" stroke={color} strokeWidth="2" />
+      </svg>
+    ),
   };
 
   return iconMap[icon] || <div style={{ width: size, height: size, backgroundColor: color, borderRadius: 8 }} />;
