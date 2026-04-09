@@ -92,6 +92,37 @@ export function CategoryIcon({ icon, color, size = 48 }: CategoryIconProps) {
         <circle cx="24" cy="24" r="3" fill={color} />
       </svg>
     ),
+    hibernate: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <path d="M14 12h20v10H14z" stroke={color} strokeWidth="2" fill="none" />
+        <path d="M10 26h20v10H10z" stroke={color} strokeWidth="2" fill="none" />
+        <path d="M18 18h20v10H18z" stroke={color} strokeWidth="2" fill="none" />
+        <line x1="14" y1="17" x2="18" y2="17" stroke={color} strokeWidth="2" />
+        <line x1="30" y1="31" x2="34" y2="31" stroke={color} strokeWidth="2" />
+      </svg>
+    ),
+    webservices: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <rect x="7" y="10" width="14" height="10" rx="2" stroke={color} strokeWidth="2" fill="none" />
+        <rect x="27" y="10" width="14" height="10" rx="2" stroke={color} strokeWidth="2" fill="none" />
+        <rect x="17" y="28" width="14" height="10" rx="2" stroke={color} strokeWidth="2" fill="none" />
+        <line x1="21" y1="15" x2="27" y2="15" stroke={color} strokeWidth="2" />
+        <line x1="14" y1="20" x2="24" y2="28" stroke={color} strokeWidth="2" />
+        <line x1="34" y1="20" x2="24" y2="28" stroke={color} strokeWidth="2" />
+      </svg>
+    ),
+    containers: (
+      <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
+        <rect x="7" y="10" width="14" height="10" rx="2" stroke={color} strokeWidth="2" fill="none" />
+        <rect x="27" y="10" width="14" height="10" rx="2" stroke={color} strokeWidth="2" fill="none" />
+        <rect x="7" y="28" width="14" height="10" rx="2" stroke={color} strokeWidth="2" fill="none" />
+        <rect x="27" y="28" width="14" height="10" rx="2" stroke={color} strokeWidth="2" fill="none" />
+        <line x1="21" y1="15" x2="27" y2="15" stroke={color} strokeWidth="2" />
+        <line x1="21" y1="33" x2="27" y2="33" stroke={color} strokeWidth="2" />
+        <line x1="14" y1="20" x2="14" y2="28" stroke={color} strokeWidth="2" />
+        <line x1="34" y1="20" x2="34" y2="28" stroke={color} strokeWidth="2" />
+      </svg>
+    ),
     microservices: (
       <svg width={size} height={size} viewBox="0 0 48 48" fill="none">
         <circle cx="24" cy="10" r="6" stroke={color} strokeWidth="2" fill="none" />

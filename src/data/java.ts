@@ -420,6 +420,32 @@ public void readFile() throws IOException {
         },
         {
           id: 12,
+          question: "What is the difference between an error and an exception in Java?",
+          answer: `**Errors** represent serious problems that are usually outside the control of the application and are generally not meant to be handled in normal code.
+
+**Exceptions** represent abnormal conditions that the application can anticipate, catch, or recover from.
+
+**Examples of errors:**
+- \`OutOfMemoryError\`
+- \`StackOverflowError\`
+
+**Examples of exceptions:**
+- \`IOException\`
+- \`SQLException\`
+- \`NullPointerException\`
+
+\`\`\`
+Throwable
+├── Error
+└── Exception
+\`\`\`
+
+**Key difference:**
+- **Error**: serious JVM or system-level problem, usually unrecoverable
+- **Exception**: application-level problem that can often be handled gracefully`
+        },
+        {
+          id: 13,
           question: "What is the difference between Checked and Unchecked Exceptions?",
           answer: `**Checked Exceptions:**
 - Checked at compile-time
@@ -455,7 +481,29 @@ public void process(String str) {
 | IOException, SQLException | NullPointerException, IndexOutOfBoundsException |`
         },
         {
-          id: 13,
+          id: 14,
+          question: "What is a User Defined Exception?",
+          answer: `A **user-defined exception** is a custom exception class created by the developer for application-specific error cases.
+
+It is usually created by extending \`Exception\` for a checked exception or \`RuntimeException\` for an unchecked exception.
+
+**Why create user-defined exceptions?**
+- make errors more descriptive
+- represent business-specific failure cases
+- improve readability and error handling
+
+\`\`\`java
+public class InvalidAgeException extends Exception {
+    public InvalidAgeException(String message) {
+        super(message);
+    }
+}
+\`\`\`
+
+For example, instead of throwing a generic exception, an application can throw \`InvalidAgeException\` or \`InsufficientBalanceException\` to make the problem clearer.`
+        },
+        {
+          id: 15,
           question: "What is the Java Collections Framework?",
           answer: `The Collections Framework provides data structures and algorithms for storing and manipulating groups of objects.
 
@@ -501,7 +549,48 @@ map.get("key");
 \`\`\``
         },
         {
-          id: 14,
+          id: 16,
+          question: "Differentiate Arrays and ArrayList.",
+          answer: `**Arrays** are used to store primitives or objects of the same type.
+
+**ArrayList** is a class that extends \`AbstractList\` and implements the \`List\` interface. It is an ordered collection that grows dynamically.
+
+| Feature | Array | ArrayList |
+|---------|-------|-----------|
+| Size | Fixed | Dynamic |
+| Data types | Primitives and objects | Objects only |
+| Framework support | Language feature | Part of Collections Framework |
+| Access | By index | By index with list methods |
+| Nulls | Allowed for object arrays | Allowed |
+| Duplicates | Allowed | Allowed |
+
+**Key differences:**
+- arrays have fixed size once created
+- ArrayList resizes automatically as elements are added or removed
+- arrays can store primitive values directly
+- ArrayList stores objects, so primitives use wrapper classes like \`Integer\` and \`Double\`
+- both support index-based retrieval and updates
+
+\`\`\`java
+int[] numbers = {1, 2, 3};
+int first = numbers[0];
+
+ArrayList<Integer> list = new ArrayList<>();
+list.add(1);
+list.add(2);
+int value = list.get(0);
+\`\`\`
+
+**Common follow-up: ways to iterate a list**
+- for loop
+- while loop
+- for-each loop
+- \`Iterator\`
+- lambda expressions
+- \`Enumeration\` interface`
+        },
+        {
+          id: 17,
           question: "What is the difference between ArrayList and LinkedList?",
           answer: `| Feature | ArrayList | LinkedList |
 |---------|-----------|------------|
@@ -533,7 +622,7 @@ linkedList.get(0);        // O(n)
 - Implementing Queue or Deque`
         },
         {
-          id: 15,
+          id: 18,
           question: "What is the difference between HashSet and TreeSet?",
           answer: `| Feature | HashSet | TreeSet |
 |---------|---------|---------|
@@ -566,7 +655,7 @@ Set<String> descSet = new TreeSet<>(Comparator.reverseOrder());
 **Choose TreeSet when:** Need sorted order, range operations`
         },
         {
-          id: 16,
+          id: 19,
           question: "What is Generics in Java?",
           answer: `Generics enable type-safe collections and methods by parameterizing types.
 
@@ -614,7 +703,7 @@ List<? super Integer> ints;  // Integer or superclass
 \`\`\``
         },
         {
-          id: 17,
+          id: 20,
           question: "What are Lambda Expressions in Java?",
           answer: `Lambda expressions (Java 8+) provide a concise way to represent functional interfaces.
 
@@ -665,7 +754,7 @@ System.out.println(multiply.calculate(5, 3)); // 15
 - \`Supplier<T>\` - T get()`
         },
         {
-          id: 18,
+          id: 21,
           question: "What is the Stream API in Java?",
           answer: `Streams (Java 8+) provide a functional approach to process collections.
 
@@ -711,7 +800,7 @@ Map<Integer, List<String>> byLength = names.stream()
 - **Terminal:** collect, forEach, reduce (trigger processing)`
         },
         {
-          id: 19,
+          id: 22,
           question: "What is the Optional class in Java?",
           answer: `Optional (Java 8+) is a container that may or may not contain a non-null value. It helps avoid NullPointerException.
 
@@ -750,7 +839,7 @@ Optional<String> result = getUser()
 - Don't use Optional for collections (return empty collection instead)`
         },
         {
-          id: 20,
+          id: 23,
           question: "What is multithreading in Java?",
           answer: `Multithreading allows concurrent execution of two or more threads for maximum CPU utilization.
 
@@ -795,7 +884,7 @@ NEW → RUNNABLE → RUNNING → (BLOCKED/WAITING) → TERMINATED
 - \`interrupt()\` - Interrupt a thread`
         },
         {
-          id: 21,
+          id: 24,
           question: "What is synchronization in Java?",
           answer: `Synchronization prevents multiple threads from accessing shared resources simultaneously.
 
@@ -850,7 +939,7 @@ atomicCount.incrementAndGet();
 \`\`\``
         },
         {
-          id: 22,
+          id: 25,
           question: "What is the volatile keyword?",
           answer: `The \`volatile\` keyword ensures that a variable's value is always read from main memory, not from thread's local cache.
 
@@ -902,7 +991,7 @@ class Flag {
 - No compound operations (like i++)`
         },
         {
-          id: 23,
+          id: 26,
           question: "What is the difference between wait() and sleep()?",
           answer: `| wait() | sleep() |
 |--------|---------|
@@ -946,7 +1035,7 @@ class SharedResource {
 - Both throw InterruptedException`
         },
         {
-          id: 24,
+          id: 27,
           question: "What is the ExecutorService in Java?",
           answer: `ExecutorService is a framework for managing thread pools and asynchronous task execution.
 
@@ -993,7 +1082,7 @@ ThreadPoolExecutor executor = new ThreadPoolExecutor(
 \`\`\``
         },
         {
-          id: 25,
+          id: 28,
           question: "What are Java annotations?",
           answer: `Annotations provide metadata about code that can be processed at compile-time or runtime.
 
@@ -1044,7 +1133,7 @@ if (method.isAnnotationPresent(LogExecutionTime.class)) {
 \`\`\``
         },
         {
-          id: 26,
+          id: 29,
           question: "What is the difference between Comparable and Comparator?",
           answer: `Both are used for sorting objects but differ in usage:
 
@@ -1096,7 +1185,7 @@ employees.sort(Comparator.comparing(Employee::getName)
 | Modifies original class | External class |`
         },
         {
-          id: 27,
+          id: 30,
           question: "What is reflection in Java?",
           answer: `Reflection allows inspection and modification of classes, methods, and fields at runtime.
 
@@ -1140,7 +1229,7 @@ for (Method m : methods) {
 - Compile-time safety lost`
         },
         {
-          id: 28,
+          id: 31,
           question: "What is serialization in Java?",
           answer: `Serialization converts an object into a byte stream for storage or transmission.
 
@@ -1193,7 +1282,7 @@ private void readObject(ObjectInputStream ois) throws IOException, ClassNotFound
 - Avro`
         },
         {
-          id: 29,
+          id: 32,
           question: "What are wrapper classes in Java?",
           answer: `Wrapper classes convert primitive types into objects.
 
@@ -1253,7 +1342,7 @@ System.out.println(c == d); // false (new objects)
 \`\`\``
         },
         {
-          id: 30,
+          id: 33,
           question: "What is the try-with-resources statement?",
           answer: `Try-with-resources (Java 7+) automatically closes resources that implement \`AutoCloseable\`.
 
@@ -3670,6 +3759,112 @@ class Z implements X, Y {
     }
 }
 \`\`\``
+        },
+        {
+          id: 31,
+          question: "What techniques can you apply to optimize the performance of Java code, and what security measures should you follow?",
+          answer: `For **performance**, the first step is to measure before optimizing. Focus on the parts of the code that are actually slow or memory-heavy instead of guessing.
+
+**Common optimization techniques:**
+- use efficient data structures for the access pattern
+- minimize unnecessary object creation
+- optimize expensive loops and repeated condition checks
+- use caching where repeated computation or repeated reads are costly
+- use profiling and benchmarking tools to identify bottlenecks
+
+\`\`\`java
+Map<Long, User> cache = new HashMap<>();
+
+public User getUser(Long id) {
+    if (cache.containsKey(id)) {
+        return cache.get(id);
+    }
+    User user = repository.findById(id);
+    cache.put(id, user);
+    return user;
+}
+\`\`\`
+
+For **security**, treat all external input as untrusted and design to reduce exposure of sensitive data and system behavior.
+
+**Common security measures:**
+- validate user input
+- sanitize or escape data where required by the output context
+- use strong encryption and secure password hashing for sensitive data
+- follow secure coding practices and least-privilege access
+- keep dependencies updated
+- implement proper authentication and authorization
+
+**Interview point:** Performance improvements should be evidence-based, and security controls should be applied by default, not only after vulnerabilities are found.`
+        },
+        {
+          id: 32,
+          question: "How do you proceed with debugging a production app that is encountering OutOfMemoryError?",
+          answer: `I would treat an **OutOfMemoryError** as both an application issue and an incident response problem. The first goal is to stabilize the service, then collect evidence, and only after that confirm the root cause.
+
+**Typical approach:**
+1. reduce impact first
+2. confirm what memory is exhausted
+3. collect runtime evidence
+4. identify leak or growth pattern
+5. fix the cause and validate under load
+
+**1. Reduce impact first**
+- restart or replace unhealthy instances if needed
+- scale horizontally if possible to protect availability
+- temporarily reduce traffic or disable memory-heavy features
+
+**2. Confirm what memory is exhausted**
+- Java heap space
+- GC overhead limit exceeded
+- Metaspace
+- direct buffer memory
+- native memory outside the heap
+
+The exact error message matters because the investigation path changes.
+
+**3. Collect evidence**
+- check application logs around the failure
+- review GC logs for frequent full GC or long pauses
+- capture a heap dump if available
+- inspect memory metrics from APM, dashboards, or JVM tools
+- compare memory growth with traffic, batch jobs, or recent deployments
+
+**4. Look for common causes**
+- memory leaks from collections that keep growing
+- oversized caches with no eviction
+- large request or response payloads
+- unbounded queues or buffering
+- thread-local misuse
+- too many objects created under load
+- incorrect JVM heap or container memory settings
+
+**5. Analyze and fix**
+- use heap-dump analysis tools to find dominant object types and retention paths
+- check whether objects are still strongly referenced unexpectedly
+- verify whether growth is continuous or only during traffic spikes
+- fix the code, cache policy, batching strategy, or configuration
+
+\`\`\`
+Traffic spike or deploy
+        ↓
+Memory rises
+        ↓
+GC becomes frequent
+        ↓
+Heap stays full
+        ↓
+OutOfMemoryError
+\`\`\`
+
+**Examples of fixes:**
+- add cache limits or eviction
+- stream large files instead of loading all data into memory
+- consume paginated results instead of huge in-memory lists
+- clear thread-local data in pooled threads
+- tune heap settings only after confirming the application behavior
+
+**Interview point:** Increasing heap size may delay failure, but if the real issue is a leak or unbounded growth, it does not solve the root cause.`
         }
       ]
     }

@@ -2,6 +2,8 @@ import { Track } from "./types";
 import { javaCategory } from "./java";
 import { reactCategory } from "./react";
 import { springCategory } from "./spring";
+import { hibernateJpaCategory } from "./hibernate-jpa";
+import { webservicesCategory } from "./webservices";
 import { sqlCategory } from "./sql";
 import { nosqlCategory } from "./nosql";
 import { designPatternsCategory } from "./design-patterns";
@@ -15,6 +17,7 @@ import { cloudArchitectureCategory } from "./cloud-architecture";
 import { observabilityReliabilityCategory } from "./observability-reliability";
 import { devopsDeliveryCategory } from "./devops-delivery";
 import { architectureCaseStudiesCategory } from "./architecture-case-studies";
+import { dockerKubernetesCategory } from "./docker-kubernetes";
 
 export const developerTrack: Track = {
   id: "developer",
@@ -25,6 +28,8 @@ export const developerTrack: Track = {
     javaCategory,
     reactCategory,
     springCategory,
+    hibernateJpaCategory,
+    webservicesCategory,
     sqlCategory,
     nosqlCategory,
     designPatternsCategory,
@@ -46,6 +51,7 @@ export const architectTrack: Track = {
     cloudArchitectureCategory,
     observabilityReliabilityCategory,
     devopsDeliveryCategory,
+    dockerKubernetesCategory,
     architectureCaseStudiesCategory,
   ],
 };
